@@ -1,9 +1,13 @@
 import { Adress } from './adress.model';
+import { Company } from './company.model';
 
 export interface User{
     id: number;
     name: string;
     username: string;
     email: string;
-    adress: Adress;
+    address: Adress;
+    phone: string;
+    website: string;
+    company: Company;
 }

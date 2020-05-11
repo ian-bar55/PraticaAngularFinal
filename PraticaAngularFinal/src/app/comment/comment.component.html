@@ -1,1 +1,20 @@
-<p>comment works!</p>
+<ng-container>
+    <div *ngFor="let item of commentsPost">
+        Post Id: <h3>{{item.postId}}</h3>
+        Comment Id:<h3>{{item.id}}</h3>
+        Comment Name:<h3>{{item.name}}</h3>
+        Comment Email: <h3>{{item.email}}</h3>
+        Comment Body: <h5>{{item.body}}</h5>
+        <hr>
+    </div>
+</ng-container>
+<ng-container *ngIf="commentsPost===null || commentsPost===undefined">
+    <div *ngFor="let item of comments">
+        Post Id: <h3>{{item.postId}}</h3>
+        Comment Id:<h3>{{item.id}}</h3>
+        Comment Name:<h3>{{item.name}}</h3>
+        Comment Email: <h3>{{item.email}}</h3>
+        Comment Body: <h5>{{item.body}}</h5>
+        <hr>
+    </div>
+</ng-container>

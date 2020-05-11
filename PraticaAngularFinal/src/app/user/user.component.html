@@ -1,1 +1,30 @@
-<p>user works!</p>
+<table>
+   <tr class="d-flex">
+      <th style="text-align: center" class="col-1">Id</th>
+      <th style="text-align: center"  class="col-1">Name</th>
+      <th style="text-align: center"  class="col-1">Username</th>
+      <th style="text-align: center"  class="col-1">Email</th>
+      <th style="text-align: center"  class="col-1">Street</th>
+      <th style="text-align: center"  class="col-1">Suite</th>
+      <th style="text-align: center"  class="col-1">City</th>
+      <th style="text-align: center"  class="col-1">Zipcode</th>
+      <th style="text-align: center"  class="col-1">Geo</th>
+      <th style="text-align: center"  class="col-1">Company Name</th>
+      <th style="text-align: center"  class="col-3">Company CatchPhrase</th>
+      <th style="text-align: center"  class="col-1">Company Bs</th>
+   </tr>
+   <tr *ngFor="let user of users" class="d-flex"> 
+      <td style="text-align: center"  class="col-1">{{user.id}}</td>
+      <td style="text-align: center"  class="col-1">{{user.name}}</td>
+      <td style="text-align: center"  class="col-1">{{user.username}}</td>
+      <td style="text-align: center"  class="col-1">{{user.email}}</td>
+      <td style="text-align: center"  class="col-1">{{user.address.street}}</td>
+      <td style="text-align: center"  class="col-1">{{user.address.suite}}</td>
+      <td style="text-align: center"  class="col-1">{{user.address.city}}</td>
+      <td style="text-align: center"  class="col-1">{{user.address.zipcode}}</td>
+      <td style="text-align: center"  class="col-2">{{user.address.geo.lat}} / {{user.address.geo.lng}}</td>
+      <td style="text-align: center"  class="col-1">{{user.company.name}}</td>
+      <td style="text-align: center"  class="col-3">{{user.company.catchPhrase}}</td>
+      <td style="text-align: center"  class="col-1">{{user.company.bs}}</td>
+   </tr>
+</table>

@@ -1,1 +1,31 @@
-<p>post works!</p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate class="padding:100px 0 0 0">
+    <div class="form-group">
+        <label>Titulo:</label>
+        <input type="text" name="title" [(ngModel)]="post.title" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Comentario:</label>
+        <input type="text" name="body" [(ngModel)]="post.body" class="form-control">
+    </div>
+    <div class="form-group">
+        <select class="form-control" name="userId" [(ngModel)]="post.userId">
+            <option value="" selected>SELECIONE...</option>
+            <option *ngFor="let user of users" [value]="user.id">{{user.id}} - {{user.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-danger btn-block">
+            Enviar
+        </button>
+    </div>  
+</form>
+<hr>
+<div *ngFor="let post of posts">
+    User Id: {{post.userId}} 
+    Post Id: {{post.id}}
+    Title: {{post.title}}
+    Body: {{post.body}}
+<button (click)="exibicaodeComentarios(post.id)">Exibir Comentarios</button>
+<app-comment [idPost]="post.id" *ngIf="post.exibirComentario === true"></app-comment>
+<hr>
+</div>
